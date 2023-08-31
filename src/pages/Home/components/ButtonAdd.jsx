@@ -1,11 +1,15 @@
 import { GrAdd } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 export default function ButtonAdd() {
   return (
     <div className="btn-add sticky text-right bottom-4">
-      <button className="p-4 bg-blueberry text-white mr-4 rounded-xl outline-none">
+      <Link
+        to="/new-note"
+        className="p-4 inline-block bg-blueberry text-white mr-4 rounded-xl outline-none"
+      >
         <GrAdd />
-      </button>
+      </Link>
     </div>
   );
 }

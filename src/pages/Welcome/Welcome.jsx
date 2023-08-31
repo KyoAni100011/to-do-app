@@ -19,9 +19,12 @@ export default function Welcome() {
         </div>
         <div className="btn-group">
           <div className="btn-demo mb-4">
-            <button className="py-4 px-12 font-bold rounded-2xl text-sm bg-blue-200 text-royal-blue outline-none">
+            <Link
+              to="/to-do"
+              className="py-4 px-12 font-bold rounded-2xl text-sm bg-blue-200 text-royal-blue outline-none"
+            >
               Try demo
-            </button>
+            </Link>
           </div>
           <div className="btn-not-now">
             <button className="py-4 px-12 font-bold rounded-2xl text-sm text-royal-blue outline-none focus:bg-blue-600 focus:text-white">

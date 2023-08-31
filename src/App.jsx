@@ -1,11 +1,10 @@
 import "./App.css";
-import Home from "./pages/Home/Home";
-import Welcome from "./pages/Welcome/Welcome";
+import Router from "./router/router";
 
 function App() {
   return (
-    <div className="App mx-auto">
-      <Home />
+    <div className="App h-full mx-auto">
+      <Router />
     </div>
   );
 }
