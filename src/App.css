@@ -4,7 +4,7 @@
 
 .time-task {
   font-size: 12px;
-  width: 60px;
+  width: 80px;
 }
 
 .task {
@@ -13,6 +13,14 @@
 
 .input-item {
   margin-bottom: 1.5rem;
+}
+
+.content-task {
+  flex-grow: 1;
+}
+
+.container {
+  height: inherit;
 }
 
 @media only screen and (min-width: 500px) {
