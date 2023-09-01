@@ -5,7 +5,7 @@ import ButtonAdd from "./components/ButtonAdd";
 
 export default function Home() {
   return (
-    <div className="container bg-anti-flash-white relative">
+    <div className="container bg-anti-flash-white relative md:bg-opacity-80">
       <div className="wrapper p-3">
         <Header />
         <div className="box-completed-tasks mb-7">
@@ -17,6 +17,11 @@ export default function Home() {
               Remaining Tasks <span className="font-extrabold">(24)</span>
             </h1>
             <div className="inner-remaining-tasks">
+              <RemainingTask />
+              <RemainingTask />
+              <RemainingTask />
+              <RemainingTask />
+              <RemainingTask />
               <RemainingTask />
               <RemainingTask />
               <RemainingTask />

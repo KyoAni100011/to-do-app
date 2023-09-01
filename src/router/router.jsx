@@ -1,6 +1,6 @@
 import Welcome from "../pages/Welcome/Welcome";
 import Home from "../pages/Home/Home";
-import NewNote from "../pages/Home/components/NewNote";
+import NewNote from "../pages/NewItem/NewNote";
 import { Route, Routes } from "react-router-dom";
 
 export default function Router() {
