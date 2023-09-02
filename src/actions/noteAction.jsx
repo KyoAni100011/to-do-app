@@ -7,4 +7,18 @@ const addNote = (note) => {
   };
 };
 
-export { addNote };
+const updateNoteUncompleted = (note) => {
+  return {
+    type: noteActionType.UPDATE_NOTE_UNCOMPLETED,
+    payload: note,
+  };
+};
+
+const updateNoteCompleted = (note) => {
+  return {
+    type: noteActionType.UPDATE_NOTE_COMPLETED,
+    payload: note,
+  };
+};
+
+export { addNote, updateNoteUncompleted, updateNoteCompleted };

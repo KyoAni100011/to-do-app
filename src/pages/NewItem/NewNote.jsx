@@ -3,10 +3,12 @@ import iconData from "../../assets/iconState.json";
 import { addNote } from "../../actions/noteAction";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import uniqid from "uniqid";
 
 export default function NewNote() {
   const dispatch = useDispatch();
   const [noteData, setNoteData] = useState({
+    id: uniqid(),
     title: "",
     state: "Important",
     message: "",

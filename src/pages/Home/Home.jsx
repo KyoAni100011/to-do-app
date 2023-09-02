@@ -26,6 +26,7 @@ export default function Home() {
               time={item.date}
               icon={resultIcon[item.state]}
               title={item.title}
+              id={item.id}
             />
           ))}
         </div>
@@ -43,6 +44,7 @@ export default function Home() {
                   time={item.date}
                   icon={resultIcon[item.state]}
                   title={item.title}
+                  id={item.id}
                 />
               ))}
             </div>
