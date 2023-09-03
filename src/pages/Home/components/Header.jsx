@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const currentDate = formatDateToCustomFormat();
   const userFromRedux = useSelector((state) => state.user.user);
+  const navigate = useNavigate();
   const user = userFromRedux || JSON.parse(localStorage.getItem("user"));
   function formatDateToCustomFormat() {
     const months = [
@@ -31,7 +33,7 @@ export default function Header() {
   const logOut = (e) => {
     e.preventDefault();
     localStorage.clear();
-    window.location.replace("/login");
+    navigate("/login");
     alert("You are logged out!");
   };
 
