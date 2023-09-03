@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import iconData from "../../assets/iconState.json";
 import {
   updateNoteCompleted,
@@ -22,22 +22,23 @@ export default function NoteDetail() {
   const Submit = () => {
     if (isEdit) {
       dispatch(updateNoteUncompleted(noteDetailData));
+      alert("Update successfully");
     }
     setEdit(!isEdit);
   };
 
-  const Completed = () => {
+  const Completed = (e) => {
     dispatch(updateNoteCompleted(noteDetailData));
   };
 
   useEffect(() => {
-    for (let item in notes) {
-      const index = notes[item].find((element) => element.id === slug);
-      index ? setNoteDetailData(index) : "";
+    if (slug) {
+      const noteData = notes.noteUncompleted.find((item) => item.id === slug);
+      if (noteData) {
+        setNoteDetailData(noteData);
+      }
     }
-  }, []);
 
-  useEffect(() => {
     const textarea = document.getElementById("autoExpand");
     const textareaMessage = document.getElementById("autoExpandMessage");
 
@@ -50,7 +51,7 @@ export default function NoteDetail() {
       this.style.height = "auto";
       this.style.height = this.scrollHeight + "px";
     });
-  }, []);
+  }, [slug, notes]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,7 +69,7 @@ export default function NoteDetail() {
             {noteDetailData?.date}
           </div>
           <div className="iconState">
-            <div class="form-group">
+            <div className="form-group">
               <select
                 className="form-control appearance-none focus:outline-none"
                 name="state"
@@ -105,7 +106,7 @@ export default function NoteDetail() {
         </div>
         <main className="mb-4">
           <textarea
-            rows="1"
+            rows="5"
             defaultValue={noteDetailData?.message}
             className="text-xl w-full focus:outline-none break-words m-0 p-0 border-none overflow-hidden resize-none"
             disabled={!isEdit}
@@ -123,12 +124,19 @@ export default function NoteDetail() {
           >
             {!isEdit ? "Update" : "Save"}
           </button>
-          <button
+          <Link
+            to="/to-do"
             onClick={Completed}
-            className="w-full py-3 bg-blue-600 text-white font-bold rounded-lg"
+            className="block text-center mb-4 w-full py-3 bg-blue-600 text-white font-bold rounded-lg"
           >
             Completed
-          </button>
+          </Link>
+          <Link
+            to="/to-do"
+            className="text-center block w-full py-3 bg-blue-600 text-white font-bold rounded-lg"
+          >
+            Go back
+          </Link>
         </div>
       </div>
     </div>

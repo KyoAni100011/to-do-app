@@ -20,7 +20,7 @@ export default function Welcome() {
         <div className="btn-group">
           <div className="btn-demo mb-4">
             <Link
-              to="/to-do"
+              to="/login"
               className="py-4 px-12 font-bold rounded-2xl text-sm bg-blue-200 text-royal-blue outline-none"
             >
               Try demo

@@ -21,4 +21,24 @@ const updateNoteCompleted = (note) => {
   };
 };
 
-export { addNote, updateNoteUncompleted, updateNoteCompleted };
+const removeNote = (note) => {
+  return {
+    type: noteActionType.REMOVE_NOTE,
+    payload: note,
+  };
+};
+
+const updateNote = (note) => {
+  return {
+    type: noteActionType.UPDATE_NOTE,
+    payload: note,
+  };
+};
+
+export {
+  addNote,
+  updateNoteUncompleted,
+  updateNoteCompleted,
+  removeNote,
+  updateNote,
+};

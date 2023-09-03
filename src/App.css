@@ -23,6 +23,10 @@
   height: inherit;
 }
 
+.icon {
+  height: 340px;
+}
+
 @media only screen and (min-width: 500px) {
   .App {
     width: 500px;

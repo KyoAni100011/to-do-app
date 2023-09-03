@@ -39,7 +39,7 @@ export default function NewNote() {
     });
   };
 
-  const Submit = () => {
+  const Submit = (e) => {
     dispatch(addNote(noteData));
   };
 
@@ -102,12 +102,13 @@ export default function NewNote() {
           <small></small>
         </div>
         <div className="mb-4">
-          <button
+          <Link
+            to="/to-do"
             onClick={Submit}
             className="bg-blue-500 block w-full text-center py-3 rounded-md text-white font-semibold hover:bg-blue-600"
           >
             Add
-          </button>
+          </Link>
         </div>
         <div>
           <Link
