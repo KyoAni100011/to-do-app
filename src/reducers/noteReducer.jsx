@@ -54,8 +54,9 @@ const noteReducer = (state = initialState, action) => {
 
     case noteActionTypes.REMOVE_NOTE:
       const newStateRemove = { ...state };
+      const noteCompletedRemove = state.noteCompleted || [];
 
-      const updatedCompletedAfterRemoval = newStateRemove.noteCompleted.filter(
+      const updatedCompletedAfterRemoval = noteCompletedRemove.filter(
         (note) => note.id !== action.payload.id
       );
 
