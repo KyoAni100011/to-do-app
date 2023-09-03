@@ -29,7 +29,6 @@ export default function Login() {
     localStorage.setItem("token", "token");
     localStorage.setItem("user", JSON.stringify(user));
     naviagte("/to-do");
-    window.location.reload();
   };
 
   return (

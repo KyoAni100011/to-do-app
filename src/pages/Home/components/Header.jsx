@@ -3,9 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const currentDate = formatDateToCustomFormat();
-  const userFromRedux = useSelector((state) => state.user.user);
   const navigate = useNavigate();
-  const user = userFromRedux || JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user"));
   function formatDateToCustomFormat() {
     const months = [
       "January",
