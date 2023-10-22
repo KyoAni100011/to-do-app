@@ -32,6 +32,10 @@
   animation: mymove 2.5s infinite;
 }
 
+.btn-filter {
+  flex-grow: 1;
+}
+
 @keyframes mymove {
   33% {
     top: 0px;

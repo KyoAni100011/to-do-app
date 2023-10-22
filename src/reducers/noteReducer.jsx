@@ -8,9 +8,7 @@ const initialState = {
 const noteReducer = (state = initialState, action) => {
   switch (action.type) {
     case noteActionTypes.ADD_NOTE:
-      // Kiểm tra nếu state.noteUncompleted là undefined, thì khởi tạo nó thành một mảng rỗng
       const noteUncompleted = state.noteUncompleted || [];
-      // Tạo một bản sao của trạng thái hiện tại và cập nhật mảng noteUncompleted
       const newState = {
         ...state,
         noteUncompleted: [...noteUncompleted, action.payload],
